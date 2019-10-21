@@ -3,6 +3,8 @@
 import React, {useEffect} from "react";
 import { useAuth0 } from "../react-auth0-spa";
 import { Link } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
+import Nav from 'react-bootstrap/Nav';
 
 const NavBar = () => {
   const { isAuthenticated, loginWithRedirect, logout, loading } = useAuth0();
@@ -22,13 +24,30 @@ const NavBar = () => {
         )}
 
         {isAuthenticated && (
-            <span>
-        <Link to="/">Home</Link>&nbsp;
-              <Link to="/profile">Profile</Link>
-      </span>
+          <Nav fill defaultActiveKey="/" as="ul">
+            <Nav.Item as="li">
+
+                <Button variant="link">
+                  <Link to="/">Home</Link>
+                </Button>
+
+            </Nav.Item>
+            <Nav.Item as="li">
+
+                <Button variant="link">
+                  <Link to="/profile">Profile</Link>
+                </Button>
+
+            </Nav.Item>
+            <Nav.Item as="li">
+
+                <Button variant="link" onClick={() => logout()}>Logout</Button>
+
+            </Nav.Item>
+          </Nav>
         )}
 
-        {isAuthenticated && <button onClick={() => logout()}>Log out</button>}
+        {/*{isAuthenticated && <Button onClick={() => logout()}>Log out</Button>}*/}
       </div>
   );
 };
