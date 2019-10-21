@@ -2,6 +2,7 @@
 
 import React from "react";
 import NavBar from "./components/NavBar";
+import PrivateRoute from "./components/PrivateRoute";
 
 // New - import the React Router components, and the Profile page component
 import { BrowserRouter, Route, Switch } from "react-router-dom";
@@ -17,7 +18,7 @@ function App() {
           </header>
           <Switch>
             <Route path="/" exact />
-            <Route path="/profile" component={Profile} />
+            <PrivateRoute path="/profile" component={Profile} />
           </Switch>
         </BrowserRouter>
       </div>
