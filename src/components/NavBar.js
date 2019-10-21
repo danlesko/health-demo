@@ -10,7 +10,7 @@ const NavBar = () => {
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
     // Update the document title using the browser API
-    if(!loading) {
+    if(!loading && !isAuthenticated) {
       loginWithRedirect({})
     }
   });
