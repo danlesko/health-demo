@@ -17,6 +17,10 @@ const NavBar = () => {
     }
   });
 
+  const logoutReset = () => {
+    logout()
+  }
+
   return (
       <div>
         {!isAuthenticated && (
@@ -41,7 +45,7 @@ const NavBar = () => {
             </Nav.Item>
             <Nav.Item as="li">
 
-                <Button variant="link" onClick={() => logout()}>Logout</Button>
+                <Button variant="link" onClick={() => logoutReset()}>Logout</Button>
 
             </Nav.Item>
           </Nav>

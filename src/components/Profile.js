@@ -19,6 +19,19 @@ const Profile = () => {
         <h2>{user.name}</h2>
         <p>{user.email}</p>
         <code>{JSON.stringify(user, null, 2)}</code>
+
+        {user.nickname === "lesko.at.cisco" ?
+        <>
+          <h1>Welcome Dr. Dan</h1>
+        </>
+        : null}
+
+        {user.nickname === "mzinser1" ?
+        <>
+          <h1>Welcome Dr. Madelaine</h1>
+        </>
+        : null}
+
       </Fragment>
   );
 };
